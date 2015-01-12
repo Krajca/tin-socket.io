@@ -11,25 +11,30 @@ oraz `bower.json`.
   - Podczas łączenia się z serwerem komunikatora użytkownik powinien móc wybrać sobie
     nazwę/identyfikator, który musi być *unikatowy* w ramach zbioru wszystkich *aktywnych*
     w danym momencie użytkowników.
-  - Wymiana wiadomości pomiędzy użytkownikami powinna korzystać z biblioteki `Socket.io`.
-  - W czasie swojego działania, serwer powinien gromadzić całą historię wiadomości.
+  - Wiadomości pomiędzy użytkownikami powinny być przesyłane za pomocą mechanizmów
+    biblioteki `Socket.io`.
+  - Podczas swojego działania, serwer powinien gromadzić całą historię wiadomości.
   - Interfejs komunikatora powinien udostępniać historię wiadomości (każda wiadomość powinna
     być opatrzona informacją o autorze oraz czasie utworzenia).
-  - Po podłączeniu się do serwera, użytkownikowi wyświetlany jest komunikat powitalny,
+  - Po podłączeniu się z serwerem, użytkownikowi wyświetlany jest komunikat powitalny,
     a pozostali użytkownicy otrzymują informację o jego dołączeniu. 
 
 ## Jak uruchomić przykład
 
-Będą w katalogu głównym projektu, należy wykonać poniższe instrukcje:
+Będąc w katalogu głównym projektu wykonujemy instrukcje:
 
   - `npm install`
   - `bower install`
   - `node app.js`
-  
+
+Następnie, w przeglądarce otwieramy adres 
+[http://localhost:3000/](http://localhost:3000/).
+
 # Zadanie 2.
 
-Do rozwiązania Zadania 1. dodaj obsługę „pokojów”, czyli nazwanych podgrup użytkowników.
-W ich implementacji wykorzystaj mechanizm „przestrzeni nazw” (ang. name spaces) `Socket.io`.
+Do rozwiązania __Zadania 1__. dodaj obsługę „pokojów”, czyli nazwanych podgrup użytkowników.
+Użytkownik może w dowolnej chwili dołączyć, do dowolnego istniejącego juz pokoju, a także utworzyć nowy. W implementacji pokojów wykorzystaj mechanizm „przestrzeni nazw” (ang. name spaces) `Socket.io` (w szczególności przydać mogą się metody `socket.join`, `socket.leave`, `socket.to`,
+`io.sockets.in`).
 
 ## Materiały i odsyłacze
 
